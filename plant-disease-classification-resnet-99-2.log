@@ -1,0 +1,113 @@
+11.0s 1 Collecting torchsummary
+11.1s 2 Downloading torchsummary-1.5.1-py3-none-any.whl (2.8 kB)
+16.9s 3 Installing collected packages: torchsummary
+17.1s 4 Successfully installed torchsummary-1.5.1
+20.2s 5 ['Tomato___Late_blight', 'Tomato___healthy', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Potato___healthy', 'Corn_(maize)___Northern_Leaf_Blight', 'Tomato___Early_blight', 'Tomato___Septoria_leaf_spot', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Strawberry___Leaf_scorch', 'Peach___healthy', 'Apple___Apple_scab', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Bacterial_spot', 'Apple___Black_rot', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Peach___Bacterial_spot', 'Apple___Cedar_apple_rust', 'Tomato___Target_Spot', 'Pepper,_bell___healthy', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Potato___Late_blight', 'Tomato___Tomato_mosaic_virus', 'Strawberry___healthy', 'Apple___healthy', 'Grape___Black_rot', 'Potato___Early_blight', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Common_rust_', 'Grape___Esca_(Black_Measles)', 'Raspberry___healthy', 'Tomato___Leaf_Mold', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Pepper,_bell___Bacterial_spot', 'Corn_(maize)___healthy']
+20.4s 6 Total disease classes are: 38
+20.8s 7 Unique Plants are:
+20.8s 8 ['Tomato', 'Grape', 'Orange', 'Soybean', 'Squash', 'Potato', 'Corn_(maize)', 'Strawberry', 'Peach', 'Apple', 'Blueberry', 'Cherry_(including_sour)', 'Pepper,_bell', 'Raspberry']
+20.9s 9 Number of plants: 14
+21.0s 10 Number of diseases: 26
+28.9s 11 There are 70295 images for training
+107.5s 12 torch.Size([3, 256, 256]) 0
+108.3s 13 Label :Apple___Apple_scab(0)
+108.6s 14 Label :Tomato___healthy(37)
+109.0s 15 Label :Peach___Bacterial_spot(16)
+125.8s 16 ----------------------------------------------------------------
+125.8s 17 Layer (type)               Output Shape         Param #
+125.8s 18 ================================================================
+125.8s 19 Conv2d-1         [-1, 64, 256, 256]           1,792
+125.8s 20 BatchNorm2d-2         [-1, 64, 256, 256]             128
+125.8s 21 ReLU-3         [-1, 64, 256, 256]               0
+125.8s 22 Conv2d-4        [-1, 128, 256, 256]          73,856
+125.8s 23 BatchNorm2d-5        [-1, 128, 256, 256]             256
+125.8s 24 ReLU-6        [-1, 128, 256, 256]               0
+125.8s 25 MaxPool2d-7          [-1, 128, 64, 64]               0
+125.8s 26 Conv2d-8          [-1, 128, 64, 64]         147,584
+125.8s 27 BatchNorm2d-9          [-1, 128, 64, 64]             256
+125.8s 28 ReLU-10          [-1, 128, 64, 64]               0
+125.8s 29 Conv2d-11          [-1, 128, 64, 64]         147,584
+125.8s 30 BatchNorm2d-12          [-1, 128, 64, 64]             256
+125.8s 31 ReLU-13          [-1, 128, 64, 64]               0
+125.8s 32 Conv2d-14          [-1, 256, 64, 64]         295,168
+125.8s 33 BatchNorm2d-15          [-1, 256, 64, 64]             512
+125.8s 34 ReLU-16          [-1, 256, 64, 64]               0
+125.8s 35 MaxPool2d-17          [-1, 256, 16, 16]               0
+125.8s 36 Conv2d-18          [-1, 512, 16, 16]       1,180,160
+125.8s 37 BatchNorm2d-19          [-1, 512, 16, 16]           1,024
+125.8s 38 ReLU-20          [-1, 512, 16, 16]               0
+125.8s 39 MaxPool2d-21            [-1, 512, 4, 4]               0
+125.8s 40 Conv2d-22            [-1, 512, 4, 4]       2,359,808
+125.8s 41 BatchNorm2d-23            [-1, 512, 4, 4]           1,024
+125.8s 42 ReLU-24            [-1, 512, 4, 4]               0
+125.8s 43 Conv2d-25            [-1, 512, 4, 4]       2,359,808
+125.8s 44 BatchNorm2d-26            [-1, 512, 4, 4]           1,024
+125.8s 45 ReLU-27            [-1, 512, 4, 4]               0
+125.8s 46 MaxPool2d-28            [-1, 512, 1, 1]               0
+125.8s 47 Flatten-29                  [-1, 512]               0
+125.8s 48 Linear-30                   [-1, 38]          19,494
+125.8s 49 ================================================================
+125.8s 50 Total params: 6,589,734
+125.8s 51 Trainable params: 6,589,734
+125.8s 52 Non-trainable params: 0
+125.8s 53 ----------------------------------------------------------------
+125.8s 54 Input size (MB): 0.75
+125.8s 55 Forward/backward pass size (MB): 343.95
+125.8s 56 Params size (MB): 25.14
+125.8s 57 Estimated Total Size (MB): 369.83
+125.8s 58 ----------------------------------------------------------------
+125.8s 59 None
+220.5s 60 CPU times: user 44 s, sys: 3.28 s, total: 47.3 s
+220.5s 61 Wall time: 1min 32s
+819.1s 62 Epoch [0], last_lr: 0.00812, train_loss: 0.7466, val_loss: 0.5865, val_acc: 0.8319
+1416.0s 63 Epoch [1], last_lr: 0.00000, train_loss: 0.1248, val_loss: 0.0269, val_acc: 0.9923
+1416.0s 64 CPU times: user 11min 16s, sys: 7min 13s, total: 18min 30s
+1416.0s 65 Wall time: 19min 53s
+1422.4s 66 Label: AppleCedarRust1.JPG , Predicted: Apple___Cedar_apple_rust
+1422.9s 67 Label: AppleCedarRust1.JPG , Predicted: Apple___Cedar_apple_rust
+1422.9s 68 Label: AppleCedarRust2.JPG , Predicted: Apple___Cedar_apple_rust
+1422.9s 69 Label: AppleCedarRust3.JPG , Predicted: Apple___Cedar_apple_rust
+1422.9s 70 Label: AppleCedarRust4.JPG , Predicted: Apple___Cedar_apple_rust
+1422.9s 71 Label: AppleScab1.JPG , Predicted: Apple___Apple_scab
+1422.9s 72 Label: AppleScab2.JPG , Predicted: Apple___Apple_scab
+1422.9s 73 Label: AppleScab3.JPG , Predicted: Apple___Apple_scab
+1422.9s 74 Label: CornCommonRust1.JPG , Predicted: Corn_(maize)___Common_rust_
+1422.9s 75 Label: CornCommonRust2.JPG , Predicted: Corn_(maize)___Common_rust_
+1422.9s 76 Label: CornCommonRust3.JPG , Predicted: Corn_(maize)___Common_rust_
+1422.9s 77 Label: PotatoEarlyBlight1.JPG , Predicted: Potato___Early_blight
+1422.9s 78 Label: PotatoEarlyBlight2.JPG , Predicted: Potato___Early_blight
+1422.9s 79 Label: PotatoEarlyBlight3.JPG , Predicted: Potato___Early_blight
+1422.9s 80 Label: PotatoEarlyBlight4.JPG , Predicted: Potato___Early_blight
+1422.9s 81 Label: PotatoEarlyBlight5.JPG , Predicted: Potato___Early_blight
+1422.9s 82 Label: PotatoHealthy1.JPG , Predicted: Potato___healthy
+1423.1s 83 Label: PotatoHealthy2.JPG , Predicted: Potato___healthy
+1423.1s 84 Label: TomatoEarlyBlight1.JPG , Predicted: Tomato___Early_blight
+1423.1s 85 Label: TomatoEarlyBlight2.JPG , Predicted: Tomato___Early_blight
+1423.1s 86 Label: TomatoEarlyBlight3.JPG , Predicted: Tomato___Early_blight
+1423.1s 87 Label: TomatoEarlyBlight4.JPG , Predicted: Tomato___Early_blight
+1423.1s 88 Label: TomatoEarlyBlight5.JPG , Predicted: Tomato___Early_blight
+1423.1s 89 Label: TomatoEarlyBlight6.JPG , Predicted: Tomato___Early_blight
+1423.1s 90 Label: TomatoHealthy1.JPG , Predicted: Tomato___healthy
+1423.1s 91 Label: TomatoHealthy2.JPG , Predicted: Tomato___healthy
+1423.1s 92 Label: TomatoHealthy3.JPG , Predicted: Tomato___healthy
+1423.1s 93 Label: TomatoHealthy4.JPG , Predicted: Tomato___healthy
+1423.1s 94 Label: TomatoYellowCurlVirus1.JPG , Predicted: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+1423.1s 95 Label: TomatoYellowCurlVirus2.JPG , Predicted: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+1423.1s 96 Label: TomatoYellowCurlVirus3.JPG , Predicted: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+1423.1s 97 Label: TomatoYellowCurlVirus4.JPG , Predicted: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+1423.1s 98 Label: TomatoYellowCurlVirus5.JPG , Predicted: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+1423.1s 99 Label: TomatoYellowCurlVirus6.JPG , Predicted: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+1429.3s 100 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+1430.3s 101 [NbConvertApp] Writing 4229990 bytes to __notebook__.ipynb
+1430.9s 102 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+1432.8s 103 [NbConvertApp] Support files will be in __results___files/
+1432.8s 104 [NbConvertApp] Making directory __results___files
+1432.8s 105 [NbConvertApp] Making directory __results___files
+1432.8s 106 [NbConvertApp] Making directory __results___files
+1432.8s 107 [NbConvertApp] Making directory __results___files
+1432.8s 108 [NbConvertApp] Making directory __results___files
+1432.8s 109 [NbConvertApp] Making directory __results___files
+1432.8s 110 [NbConvertApp] Making directory __results___files
+1432.8s 111 [NbConvertApp] Making directory __results___files
+1432.8s 112 [NbConvertApp] Making directory __results___files
+1432.8s 113 [NbConvertApp] Writing 403665 bytes to __results__.html
